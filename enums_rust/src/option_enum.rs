@@ -10,7 +10,7 @@ pub fn option_ex() {
     // prints or extracts the value T
     println!("{}", some_str.expect("some string"));
     // for none it creates code ended with panic and print the message
-    println!("{}", absent_item.expect("this is none, code panics here"));
+    // println!("{}", absent_item.expect("this is none, code panics here"));
     // rust provides nulll safety through this implemenatation as we have to convert option(T) to type T to do any operation and compiler will force us to do so
     // rust forces you to decalre type for none value and make us handle the cases explicitly
     // match expression is control that does converting some(T) to T and None and execute code accordingly to variants

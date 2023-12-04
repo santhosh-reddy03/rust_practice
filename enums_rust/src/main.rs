@@ -1,4 +1,5 @@
 mod option_enum;
+mod pattern_matching;
 
 fn main() {
     // enums should be used in such a scenario where you dont need a class type/ struct type and have limited set of values that 
@@ -46,4 +47,5 @@ fn main() {
     let m = Message::Write(String::from("hello"));
     m.call();
     option_enum::option_ex();
+    pattern_matching::match_pattern();
 }
