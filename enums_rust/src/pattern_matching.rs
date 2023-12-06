@@ -54,5 +54,12 @@ pub fn match_pattern() {
         7 => println!("seven"),
         _ => (),
     }
-
+    // if let in place of pattern matching for one default/main match 
+    let mut count = 0;
+    if let Coin::Quarter(state) = coin {
+        println!("this is quarter coin from state {:?}", state);
+    } else {
+        count += 1
+    }
+    println!("{}", count)
 }

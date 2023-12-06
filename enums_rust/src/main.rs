@@ -1,6 +1,6 @@
 mod option_enum;
 mod pattern_matching;
-
+mod if_let;
 fn main() {
     // enums should be used in such a scenario where you dont need a class type/ struct type and have limited set of values that 
     // still needs typing example IpAddress(v4 and v6)
@@ -48,4 +48,5 @@ fn main() {
     m.call();
     option_enum::option_ex();
     pattern_matching::match_pattern();
+    if_let::iflet_ex();
 }
