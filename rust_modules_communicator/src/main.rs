@@ -39,9 +39,38 @@ fn main() {
         outermost::inside::inner_function();
         // outermost::inside::secret_function();
     }
+
+
+    // so far we have been using fully qualified name when referring to a function in submodules even its deeply nested
+    // instead we can make use of 'use' key word
+    of::nested_modules();
+    // use bring what we have specified into our scope, so we still need to refer the sub things inside the namespace ex of::nested_modules()
+    // we can also use 'use' on enums to bring enum variants into scope, if we are bringing more than one item from a scope into namespace
+    // we should use curly braces ex as show below for TrafficLight
+    // we can bring all together by using * from a namespace, and we should be careful while using * as it will bring all into our namespace
+    let red = Red;
+    let yellow = Yellow;
+    let green = TrafficLight::Green;
 }
 
 
 
 
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+
+use TrafficLight::{Red, Yellow};
+
+pub mod a {
+    pub mod series {
+        pub mod of {
+            pub fn nested_modules() {}
+        }
+    }
+}
+
+use a::series::of;
 

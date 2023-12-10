@@ -38,11 +38,21 @@ pub fn add(left: usize, right: usize) -> usize {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
+    // use super::*;
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn check_client_connect() {
+        // if we use client::connect() it fails becuase we are not referring communicator scope before client as we are inside communicator
+        // we cant use 'use' because the paths are relative and we need client inside tests module
+        // we can overcome this by using super infront of client which tells rust to move one module up from the current one 
+        // we can also use this ::client::connect() to check from root of the module, but it seems deprecated
+        super::client::connect();
+
+        // instead of specifying the super for every usage we instead use super::import_required_mod at the paretns(tests) top instead of root(lib.rs) 
     }
+    // #[test]
+    // fn it_works() {
+    //     let result = add(2, 2);
+    //     assert_eq!(result, 4);
+    // }
 }
